@@ -4,7 +4,7 @@ provider "aws" {
   secret_key = "+MEFG4QQ6/OaohVm8RsUUsNzSK6nRoTQuClQ51IR"
 }
 variable "count_instances" {
-  type = string
+  default = 1
 }
 
 resource "aws_instance" "web" {
