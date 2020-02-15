@@ -3,7 +3,7 @@ provider "aws" {
   access_key = "AKIATTF66BRW65BTQGBW"
   secret_key = "+MEFG4QQ6/OaohVm8RsUUsNzSK6nRoTQuClQ51IR"
 }
-variable count_instances {
+variable "count_instances" {
 }
 
 resource "aws_instance" "example" {
