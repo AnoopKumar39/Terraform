@@ -4,11 +4,12 @@ provider "aws" {
   secret_key = "+MEFG4QQ6/OaohVm8RsUUsNzSK6nRoTQuClQ51IR"
 }
 variable "count_instances" {
-    type = number
+  default = 1
 }
 
-resource "aws_instance" "example" {
-  instance_type = "t2.micro"
-  ami           = "ami-00fa174a967f9222e"
-  count         = "var.count_instances"
+resource "aws_instance" "web" {
+count         = var.count_instances
+ami           = "ami-00fa174a967f9222e"
+instance_type = "t2.micro"
 }
+
