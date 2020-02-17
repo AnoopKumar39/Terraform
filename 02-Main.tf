@@ -9,7 +9,7 @@ resource "aws_vpc" "devops_vpc" {
 resource "aws_subnet" "devops_subnets" {
   count = "${length(var.AZ)}"
   vpc_id = "${aws_vpc.devops_vpc.id}"
-  cidr_block = "${var.subnet_cidr}"
+  cidr_block = "${element(var.subnet_cidr, count.index)}"
 
   tags = {
     Name = "Devops_Subnet-1"
