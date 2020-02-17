@@ -12,5 +12,5 @@ variable "vpc_cidr" {
 }
 
 variable "AZ" {
-    default = "us-east-1d"
+    list = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }
