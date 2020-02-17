@@ -2,8 +2,8 @@ resource "aws_vpc" "var.main_vpc" {
   cidr_block       = "10.0.0.0/16"
 
   tags = {
-    "Name"       = "Studentapp"
-    "Created by" = "Terraform"
+    "Name"         = "Studentapp"
+    "Created by"   = "Terraform"
   }
 }
 
@@ -13,12 +13,7 @@ resource "aws_subnet" "devops_subnet" {
   cidr_block        = "10.0.1.0/24"
 
   tags = {
-    "Name"       = "Studentapp"
-    "Created by" = "Terraform"
+    "Name"          = "Studentapp"
+    "Created by"    = "Terraform"
   }
-}
-
-variable "main_vpc" {
-  type = string
-  default = "devops_vpc"
 }
