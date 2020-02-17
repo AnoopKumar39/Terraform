@@ -7,7 +7,7 @@ resource "aws_vpc" "devops_vpc" {
   }
 }
 resource "aws_subnet" "devops_subnet-1" {
-  availability_zone       = "${var.AZ}"
+  availability_zone       = "${lenghth(var.AZ)}"
   vpc_id                  = "${aws_vpc.devops_vpc.id}"
   cidr_block              = "${var.subnet_cidr}"
 
