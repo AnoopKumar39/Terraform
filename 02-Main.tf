@@ -7,7 +7,7 @@ resource "aws_vpc" "devops_vpc" {
   }
 }
 resource "aws_subnet" "devops_subnets" {
-  count = "${length(var.AZ)}"
+  count = "${length(data.aws_availability_zones.available.names)}"
   vpc_id = "${aws_vpc.devops_vpc.id}"
   cidr_block = "${element(var.subnet_cidr, count.index)}"
 
