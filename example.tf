@@ -4,8 +4,8 @@ provider "aws" {
 }
 
 resource "aws_key_pair" "example" {
-  key_name   = "examplekey"
-  public_key = file("~/.ssh/terraform.pub")
+  key_name   = "devops"
+  public_key = file("~/.ssh/devops.pub")
 }
 
 resource "aws_instance" "example" {
@@ -16,7 +16,7 @@ resource "aws_instance" "example" {
   connection {
   type        = "ssh"
   user        = "ec2-user"
-  private_key = file("~/.ssh/terraform")
+  private_key = file("~/.ssh/devops")
   host        = self.public_ip
   }
 
