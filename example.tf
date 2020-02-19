@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_key_pair" "example" {
-  key_name   = "devops"
+  key_name   = "devops2"
   public_key = file("~/.ssh/devops.pub")
 }
 
