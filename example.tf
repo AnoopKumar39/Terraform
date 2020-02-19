@@ -8,7 +8,7 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   # vpc_security_group_ids = ["sg-0077..."]
   # subnet_id = "subnet-923a..."
-  depends_on = [aws_s3_bucket.example]
+  depends_on = [aws_s3_bucket.examplessssssssss]
 }
 
 
