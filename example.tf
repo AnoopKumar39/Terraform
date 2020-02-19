@@ -9,3 +9,9 @@ resource "aws_instance" "example" {
   # vpc_security_group_ids = ["sg-0077..."]
   # subnet_id = "subnet-923a..."
 }
+
+
+resource "aws_eip" "ip" {
+    vpc = true
+    instance = aws_instance.example.id
+}
