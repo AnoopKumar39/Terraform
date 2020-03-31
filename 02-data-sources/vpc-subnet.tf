@@ -26,7 +26,7 @@ output "subnets_list" {
 }
 
 resource "aws_instance" "web" {
-    ami           = "ami-0503db1a235b15e3f"
+    ami           = "ami-0c322300a1dd5dc79"
     instance_type = "t2.micro"
     subnet_id     = "${element(local.subnet_ids,3)}"
 }
