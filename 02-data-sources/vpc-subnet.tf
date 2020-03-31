@@ -1,4 +1,7 @@
 data "aws_vpcs" "demo" {
+  tags = {
+    name = "Sample"
+  }
 }
 
 output "current_vpc" {
