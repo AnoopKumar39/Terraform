@@ -21,5 +21,4 @@ output "all_subnets" {
 resource "aws_instance" "web" {
   ami           = "ami-0503db1a235b15e3f"
   instance_type = "t2.micro"
-  subnet_id     = "${element(data.aws_subnet_ids.demo.ids, 4)}"
-  
+  subnet_id     = "${element(data.aws_subnet_ids.demo.ids,4)}"
