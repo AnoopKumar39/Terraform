@@ -18,7 +18,7 @@ output "all_subnets" {
 }
 
 locals {
-    subnet_ids = "${tolist(data.aws_subnet_ids.demo.ids}"
+    subnet_ids = "${tolist(data.aws_subnet_ids.demo.ids)}"
 }
 
 output "subnets_list" {
