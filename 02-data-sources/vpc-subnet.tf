@@ -25,8 +25,17 @@ output "subnets_list" {
     value = "${local.subnet_ids}"
 }
 
-resource "aws_instance" "web" {
-    ami           = "ami-0c322300a1dd5dc79"
-    instance_type = "t2.micro"
-    subnet_id     = "${element(local.subnet_ids,5)}"
+#resource "aws_instance" "web" {
+#    ami           = "ami-0c322300a1dd5dc79"
+#    instance_type = "t2.micro"
+#    subnet_id     = "${element(local.subnet_ids,5)}"
+#}
+
+resource "random_integer" "subnet_pick" {
+  min     = 1
+  max     = 100
+}
+
+output "randon_number" {
+  value = "${random_integer.subnet_pick.result}"
 }
