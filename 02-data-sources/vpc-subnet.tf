@@ -17,8 +17,15 @@ output "all_subnets" {
     value = "${data.aws_subnet_ids.demo.ids}"
 }
 
+locals {
+    subnet_ids = "${tolist(data.aws_subnet_ids.demo.ids}"
+}
 
-resource "aws_instance" "web" {
-  ami           = "ami-0503db1a235b15e3f"
-  instance_type = "t2.micro"
-  subnet_id     = "${element(data.aws_subnet_ids.demo.ids,4)}"
+output "subnets_list" {
+    value = "${local.subnet_ids}"
+}
+
+##resource "aws_instance" "web" {
+##  ami           = "ami-0503db1a235b15e3f"
+##  instance_type = "t2.micro"
+##subnet_id     = "${element(data.aws_subnet_ids.demo.ids,4)}"
