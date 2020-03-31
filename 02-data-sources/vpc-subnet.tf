@@ -1,6 +1,6 @@
-data "aws_vpcs" "default" {
+data "aws_vpcs" "demo" {
 }
 
-output "aws_vpc" {
-  value = "${data.aws_vpcs.default.ids}"
+output "current_vpc's" {
+  value = "${data.aws_vpcs.demo.ids}"
 }
