@@ -1,7 +1,11 @@
 resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block                = "${var.VPC_CIDR}"
 
-    tags = {
-    Name = "Studentapp"
-  }
+    tags                    = {
+    Name                    = "${var.VPC_NAME}"
+    "Created by"            = "Terraform"
+    "Modified_Time"         = "${timestamp()}" 
+
+
+    }
 }
