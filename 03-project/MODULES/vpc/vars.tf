@@ -1,4 +1,4 @@
-varible "VPC_CIDR" {}
-varible "VPC_NAME" {}
+variable "VPC_CIDR" {}
+variable "VPC_NAME" {}
 
  
