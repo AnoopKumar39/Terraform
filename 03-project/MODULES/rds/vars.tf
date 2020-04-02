@@ -3,4 +3,4 @@ variable "PRIVATE_SUBNETS" {
     type = "list"
 }
 variable "VPC_ID" {}
-variable "VPC-CIDR" {}
+variable "VPC_CIDR" {}
