@@ -5,6 +5,7 @@ resource "aws_route_table" "public-rt" {
     cidr_block          = "${var.VPC_CIDR}"
     gateway_id          = "${aws_internet_gateway.igw.id}"
   }
+}
 
 
 resource "aws_route_table_association" "public-rt" {
