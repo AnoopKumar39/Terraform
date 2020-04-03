@@ -5,3 +5,7 @@ output "PRIVATE_SUBNETS" {
 output "VPC_ID" {
     value = "${aws_vpc.main.id}"
 }
+
+output "PUBLIC_SUBNETS" {
+  value = "${aws_subnet.public_subnets.*.id}"
+}
