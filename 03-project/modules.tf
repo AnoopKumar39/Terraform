@@ -13,3 +13,10 @@ module "database" {
     PRIVATE_SUBNETS = "${module.network.PRIVATE_SUBNETS}"
     VPC_ID        = "${module.network.VPC_ID}"
 }
+
+module "infrastructure" {
+    source          = "./MODULES/infrastructure"
+    INSTANCE_TYPE   = "${var.INSTANCE_TYPE}"
+    PRIVATE_SUBNETS = "${module.network.PUBLIC_SUBNETS}"
+
+}
