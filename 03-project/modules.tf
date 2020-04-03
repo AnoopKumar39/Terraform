@@ -17,6 +17,6 @@ module "database" {
 module "infrastructure" {
     source          = "./MODULES/infrastructure"
     INSTANCE_TYPE   = "${var.INSTANCE_TYPE}"
-    PRIVATE_SUBNETS = "${module.network.PUBLIC_SUBNETS}"
+    PUBLIC_SUBNETS = "${module.network.PUBLIC_SUBNETS}"
 
 }
