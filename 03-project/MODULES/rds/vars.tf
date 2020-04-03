@@ -4,3 +4,6 @@ variable "PRIVATE_SUBNETS" {
 }
 variable "VPC_ID" {}
 variable "VPC_CIDR" {}
+variable "DBNAME" {}
+variable "DBUSER" {}
+variable "DBPASS" {}
