@@ -23,5 +23,8 @@ module "infrastructure" {
     GITUSER         = "${var.GITUSER}"
     GITPASS         = "${var.GITPASS}"
     DBHOST          = "${module.database.DBHOST}"
+    DBNAME          = "${var.DBNAME}"
+    DBUSER          = "${var.DBUSER}"
+    DBPASS          = "${var.DBPASS}"
 
 }
