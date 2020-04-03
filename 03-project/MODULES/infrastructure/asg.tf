@@ -8,6 +8,12 @@ resource "aws_launch_configuration" "application-config" {
   name_prefix   = "terraform-lc-example"
   image_id      = "ami-00fa174a967f9222e"
   instance_type = "${var.INSTANCE_TYPE}"
+  key_name      = "devops"
+  security_groups = ["${aws_security_group.allow_ssh.id}", "${aws_security_group.allow_web.id}"]
+  user_data        = <<EOF
+#!/bin/bash
+yum install ansible -y
+EOF
 }
 
 
@@ -23,7 +29,11 @@ resource "aws_autoscaling_group" "application" {
   launch_configuration      = "${aws_launch_configuration.application-config.name}"
   vpc_zone_identifier       = "${var.PUBLIC_SUBNETS}"
 
-
- 
+  tags                      = {
+  Name                    = "${var.VPC_NAME}-ASG"
+  "Created by"            = "Terraform"
+  "Modified_Time"         = "${timestamp()}"
+  propagate_at_launch     = true
+  }
   
 }
