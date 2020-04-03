@@ -29,11 +29,13 @@ resource "aws_autoscaling_group" "application" {
   launch_configuration      = "${aws_launch_configuration.application-config.name}"
   vpc_zone_identifier       = "${var.PUBLIC_SUBNETS}"
 
-  tags                      = {
-  Name                    = "${var.VPC_NAME}-ASG"
-  "Created by"            = "Terraform"
-  "Modified_Time"         = "${timestamp()}"
-  propagate_at_launch     = true
-  }
+  tags                      = [
+    {
+    key                     = "Name"
+    value                   = "${var.VPC_NAME}-asg"
+    propagate_at_launch     = true
+    }
+  ]
+
   
 }
