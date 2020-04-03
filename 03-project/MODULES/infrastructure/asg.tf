@@ -13,6 +13,7 @@ resource "aws_launch_configuration" "application-config" {
   user_data        = <<EOF
 #!/bin/bash
 yum install ansible -y
+ansible pull -U https://${var.GITUSER}:${var.GITPASS}@github.com/AnoopKumar39/Ansible-Pull.git stack.yml -e DBHOST=${var.DBHOST}
 EOF
 }
 
