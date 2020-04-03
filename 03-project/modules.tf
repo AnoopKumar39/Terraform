@@ -12,6 +12,9 @@ module "database" {
     #AZ              = "${data.aws_availability_zones.available.names}"
     PRIVATE_SUBNETS = "${module.network.PRIVATE_SUBNETS}"
     VPC_ID        = "${module.network.VPC_ID}"
+    DBNAME          = "${var.DBNAME}"
+    DBUSER          = "${var.DBUSER}"
+    DBPASS          = "${var.DBPASS}"
 }
 
 module "infrastructure" {
@@ -23,8 +26,6 @@ module "infrastructure" {
     GITUSER         = "${var.GITUSER}"
     GITPASS         = "${var.GITPASS}"
     DBHOST          = "${module.database.DBHOST}"
-    DBNAME          = "${var.DBNAME}"
-    DBUSER          = "${var.DBUSER}"
-    DBPASS          = "${var.DBPASS}"
+
 
 }
