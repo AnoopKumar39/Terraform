@@ -20,5 +20,8 @@ module "infrastructure" {
     PUBLIC_SUBNETS = "${module.network.PUBLIC_SUBNETS}"
     VPC_ID        = "${module.network.VPC_ID}"
     VPC_NAME        = "${var.PROJECT_NAME}"
+    GITUSER         = "${GITUSER}"
+    GITPASS         = "${GITPASS}"
+    DBHOST          = "${module.database.DBHOST}"
 
 }
