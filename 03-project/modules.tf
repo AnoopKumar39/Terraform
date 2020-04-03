@@ -18,5 +18,6 @@ module "infrastructure" {
     source          = "./MODULES/infrastructure"
     INSTANCE_TYPE   = "${var.INSTANCE_TYPE}"
     PUBLIC_SUBNETS = "${module.network.PUBLIC_SUBNETS}"
+    VPC_ID        = "${module.network.VPC_ID}"
 
 }
