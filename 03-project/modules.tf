@@ -18,6 +18,7 @@ module "database" {
     DBNAME          = "${var.DBNAME}"
     DBUSER          = "${var.DBUSER}"
     DBPASS          = "${var.DBPASS}"
+    MGMT_VPC_CIDR   = "${var.MGMT_VPC_CIDR}"
 }
 
 module "infrastructure" {
