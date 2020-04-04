@@ -23,12 +23,13 @@ resource "aws_autoscaling_group" "application" {
   max_size                  = 5
   min_size                  = 1
   health_check_grace_period = 300
-  health_check_type         = "ELB"
+  health_check_type         = "EC2"
   desired_capacity          = 1
   force_delete              = true
   placement_group           = "${aws_placement_group.application.id}"
   launch_configuration      = "${aws_launch_configuration.application-config.name}"
   vpc_zone_identifier       = "${var.PUBLIC_SUBNETS}"
+  load_balancers            = ["${aws_elb.bar.name}"]
 
   tags                      = [
     {
@@ -40,3 +41,17 @@ resource "aws_autoscaling_group" "application" {
 
   
 }
+
+resource "aws_autoscaling_policy" "bat" {
+  name                   = "foobar3-terraform-test"
+  autoscaling_group_name = "${aws_autoscaling_group.application.name}"
+policy_type = "TargetTrackingScaling"
+target_tracking_configuration {
+  predefined_metric_specification {
+    predefined_metric_type = "ASGAverageCPUUtilization"
+  }
+
+  target_value = 40.0
+}
+}
+
