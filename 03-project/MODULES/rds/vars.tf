@@ -7,3 +7,5 @@ variable "VPC_CIDR" {}
 variable "DBNAME" {}
 variable "DBUSER" {}
 variable "DBPASS" {}
+variable "MGMT_VPC_CIDR" {}
+
