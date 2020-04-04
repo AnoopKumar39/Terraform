@@ -3,6 +3,9 @@ module "network" {
     VPC_CIDR        = "${var.PROJECT_CIDR}"
     VPC_NAME        = "${var.PROJECT_NAME}"
     AZ              = "${data.aws_availability_zones.available.names}"
+    MGMT_VPC_ID     = "${var.MGMT_VPC_ID}"
+    ACCOUNT_ID      = "${data.aws_caller_identity.current.account_id}"
+    MGMT_VPC_CIDR   = "${var.MGMT_VPC_CIDR}"
 }
 
 module "database" {
