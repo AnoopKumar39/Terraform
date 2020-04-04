@@ -5,7 +5,7 @@ module "network" {
     AZ              = "${data.aws_availability_zones.available.names}"
     MGMT_VPC_ID     = "${var.MGMT_VPC_ID}"
     ACCOUNT_ID      = "${data.aws_caller_identity.current.account_id}"
-    #MGMT_VPC_CIDR   = "${var.MGMT_VPC_CIDR}"
+    MGMT_VPC_CIDR   = "${var.MGMT_VPC_CIDR}"
 }
 
 module "database" {
