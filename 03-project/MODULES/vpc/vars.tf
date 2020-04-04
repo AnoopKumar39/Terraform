@@ -3,6 +3,8 @@ variable "VPC_NAME" {}
 variable "AZ" {
     type = "list"
 }
+variable "MGMT_VPC_ID" {}
+variable "ACCOUNT_ID" {}
 
 
  
