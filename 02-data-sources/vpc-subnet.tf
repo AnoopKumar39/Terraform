@@ -39,3 +39,6 @@ resource "random_integer" "subnet_pick" {
 output "randon_number" {
   value = "${random_integer.subnet_pick.result}"
 }
+
+
+#######################################$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
