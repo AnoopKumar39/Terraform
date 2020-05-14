@@ -1,6 +1,9 @@
 data "aws_vpcs" "demo" {
 }
 
+#############################################
+#############################################
+
 locals {
     vpc_ids = "${tolist(data.aws_vpcs.demo.ids)}"
     vpc_id  = "${element(local.vpc_ids,1)}"
