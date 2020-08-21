@@ -13,3 +13,4 @@ resource "aws_db_instance" "studentapp-db" {
   vpc_security_group_ids    = ["${aws_security_group.allow_mariadb.id}"]
   skip_final_snapshot       = true
 }
+  ####engine                    = "mariadb"
