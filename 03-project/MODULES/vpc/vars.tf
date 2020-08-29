@@ -7,6 +7,8 @@ variable "MGMT_VPC_ID" {}
 variable "ACCOUNT_ID" {}
 variable "MGMT_VPC_CIDR" {}
 
+##variable "ACCOUNT_ID" {}
+##variable "MGMT_VPC_CIDR" {}
 
 
  
