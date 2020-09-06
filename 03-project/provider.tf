@@ -11,3 +11,6 @@ terraform {
 ######
 ###provider "azure" {
 ###  }
+######
+###provider "azure" {
+###  }
