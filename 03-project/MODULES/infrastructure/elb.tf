@@ -27,3 +27,4 @@ resource "aws_elb" "bar" {
     Name                      = "${var.VPC_NAME}-asg-elb"
   }
 }
+####resource "aws_elb" "bar" {
