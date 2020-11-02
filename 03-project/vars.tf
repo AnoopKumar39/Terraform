@@ -8,5 +8,5 @@ variable "DBUSER" {}
 variable "DBPASS" {}
 variable "MGMT_VPC_ID" {}
 variable "MGMT_VPC_CIDR" {}
-
+###########variable "MGMT_VPC_CIDR" {}
 
