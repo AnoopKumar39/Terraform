@@ -10,3 +10,4 @@ alias D="terraform destroy -var-file=student.tfvars -auto-approve"
   password             = "student1"
 
 terraform console to calculate cidr function
+terraform console to calculate cidr function
